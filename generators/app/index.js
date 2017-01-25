@@ -37,6 +37,10 @@ module.exports = yeoman.Base.extend({
       this.templatePath('lib'),
       this.destinationPath('lib')
     );
+    this.directory(
+      this.templatePath('dist'),
+      this.destinationPath('dist')
+    );
   },
 
   install: function () {
