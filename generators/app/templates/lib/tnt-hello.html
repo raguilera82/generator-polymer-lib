@@ -10,14 +10,19 @@
 
   </template>
   <script>
-    Polymer({
-      is: 'tnt-hello',
-      properties: {
-        name: {
-          type: String,
-          value: 'Por defecto'
+    class HelloElement extends Polymer.Element {
+      static get is() {return "tnt-hello";}
+
+      static get properties() {
+        return {
+          name: {
+            type: String,
+            value: "by default"
+          }
         }
       }
-    });
+
+    }
+    customElements.define(HelloElement.is, HelloElement);
   </script>
 </dom-module>

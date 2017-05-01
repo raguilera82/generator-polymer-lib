@@ -1,22 +1,24 @@
 'use strict';
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
 
-module.exports = yeoman.Base.extend({
+module.exports = class extends Generator {
 
-  prompting: function () {
-    var done = this.async();
-
-    // Have Yeoman greet the user.
+  prompting() {
     this.log(yosay(
       'Welcome to the epic ' + chalk.red('generator-polymer-lib') + ' generator!'
     ));
 
-    done();
-  },
+    const prompts = [];
 
-  writing: function () {
+    return this.prompt(prompts).then(props => {
+      // To access props later use this.props.someAnswer;
+      this.props = props;
+    });
+  }
+
+  writing() {
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
@@ -33,17 +35,18 @@ module.exports = yeoman.Base.extend({
       this.templatePath('package.json'),
       this.destinationPath('package.json')
     );
-    this.directory(
+    this.fs.copy(
       this.templatePath('lib'),
       this.destinationPath('lib')
     );
-    this.directory(
+    this.fs.copy(
       this.templatePath('dist'),
       this.destinationPath('dist')
     );
-  },
+  }
 
-  install: function () {
+  install() {
     this.installDependencies();
   }
-});
+
+};
