@@ -24,15 +24,15 @@ module.exports = class extends Generator {
       this.destinationPath('.gitignore')
     );
     this.fs.copy(
-      this.templatePath('bower.json'),
+      this.templatePath('_bower.json'),
       this.destinationPath('bower.json')
     );
     this.fs.copy(
-      this.templatePath('index.html'),
+      this.templatePath('_index.html'),
       this.destinationPath('index.html')
     );
     this.fs.copy(
-      this.templatePath('package.json'),
+      this.templatePath('_package.json'),
       this.destinationPath('package.json')
     );
     this.fs.copy(
