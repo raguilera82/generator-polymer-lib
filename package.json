@@ -1,6 +1,6 @@
 {
   "name": "generator-polymer-lib",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "This generator allows to create a company lib of web components with Polymer",
   "homepage": "https://github.com/raguilera82/generator-polymer-lib",
   "author": {
