@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Polymer Lib</title>
   <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-  <link rel="import" href="lib/lib.html"/>
+  <link rel="import" href="lib/lib.html" />
 </head>
+
 <body>
-  
+
   <h1>Showcase components</h1>
 
   <tnt-hello name="All"></tnt-hello>
 
+  <script>
+    document.querySelector('tnt-hello').addEventListener('select', function ($event) {
+      alert($event.detail);
+    })
+  </script>
+
 </body>
+
 </html>
